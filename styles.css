@@ -1,0 +1,310 @@
+.path-mod-setask div.gradingnavigation div {
+    float: left;
+    margin-left: 2em;
+}
+
+.path-mod-setask div.submissionstatustable,
+.path-mod-setask div.submissionfull,
+.path-mod-setask div.submissionlinks,
+.path-mod-setask div.usersummary,
+.path-mod-setask div.feedback,
+.path-mod-setask div.gradingsummary {
+    margin-bottom: 5em;
+}
+
+.path-mod-setask div.submissionstatus .generaltable,
+.path-mod-setask div.submissionlinks .generaltable,
+.path-mod-setask div.feedback .generaltable,
+.path-mod-setask div.submissionsummarytable .generaltable,
+.path-mod-setask div.attempthistory table,
+.path-mod-setask div.gradingsummary .generaltable {
+    width: 100%;
+}
+
+.path-mod-setask table.generaltable table td {
+    border: 0px none;
+}
+
+.path-mod-setask .gradingsummarytable,
+.path-mod-setask .feedbacktable,
+.path-mod-setask .lockedsubmission,
+.path-mod-setask .submissionsummarytable {
+    margin-top: 1em;
+}
+
+.path-mod-setask div.submissionsummarytable table tbody tr td.c0 {
+    width: 30%;
+}
+
+.path-mod-setask .submittedlate {
+    color: red;
+    font-weight: 900;
+}
+
+.path-mod-setask.jsenabled .gradingoptionsform .fsubmit {
+    display: none;
+}
+
+.path-mod-setask.jsenabled .gradingtable .c1 select {
+    display: none;
+}
+
+.path-mod-setask .quickgradingform .mform fieldset {
+    margin: 0px;
+    padding: 0px;
+}
+
+.path-mod-setask .gradingbatchoperationsform .mform fieldset {
+    margin: 0px;
+    padding: 0px;
+}
+
+.path-mod-setask td.submissionstatus,
+.path-mod-setask div.submissionstatus,
+.path-mod-setask a:link.submissionstatus {
+    color: black;
+    background-color: #efefef;
+}
+
+.path-mod-setask td.submissionstatusdraft,
+.path-mod-setask div.submissionstatusdraft,
+.path-mod-setask a:link.submissionstatusdraft {
+    color: black;
+    background-color: #efefcf;
+}
+
+.path-mod-setask td.submissionstatussubmitted,
+.path-mod-setask div.submissionstatussubmitted,
+.path-mod-setask a:link.submissionstatussubmitted {
+    color: black;
+    background-color: #cfefcf;
+}
+
+
+.path-mod-setask td.submissionlocked,
+.path-mod-setask div.submissionlocked {
+    color: black;
+    background-color: #efefcf;
+}
+
+.path-mod-setask td.submissionreopened,
+.path-mod-setask div.submissionreopened {
+    color: black;
+    background-color: #efefef;
+}
+
+.path-mod-setask td.submissiongraded,
+.path-mod-setask div.submissiongraded {
+    color: black;
+    background-color: #cfefcf;
+}
+
+.path-mod-setask td.submissionnotgraded,
+.path-mod-setask div.submissionnotgraded {
+    color: black;
+    background-color: #efefef;
+}
+
+.path-mod-setask td.latesubmission,
+.path-mod-setask a:link.latesubmission,
+.path-mod-setask div.latesubmission {
+    color: black;
+    background-color: #efcfcf;
+}
+
+.path-mod-setask td.earlysubmission,
+.path-mod-setask div.earlysubmission {
+    color: black;
+    background-color: #cfefcf;
+}
+
+.path-mod-setask .gradingtable .c0 {
+    display: none;
+}
+
+.path-mod-setask.jsenabled .gradingtable .c0 {
+    display: table-cell;
+}
+
+.path-mod-setask .gradingbatchoperationsform {
+    display: none;
+}
+
+.path-mod-setask.jsenabled .gradingbatchoperationsform {
+    display: block;
+}
+
+.path-mod-setask .gradingtable tr.selectedrow td {
+    background-color: #ffeecc;
+}
+
+.path-mod-setask .gradingtable tr.unselectedrow td {
+    background-color: white;
+}
+
+.path-mod-setask .gradingtable .c0 div.selectall {
+    margin-left: 7px;
+}
+
+.path-mod-setask .gradingtable .yui3-menu ul {
+    margin: 0px;
+}
+
+.path-mod-setask .gradingtable .yui3-menu-label {
+    padding-left: 0px;
+    line-height: 12px;
+}
+
+.path-mod-setask .gradingtable .yui3-menu-label img {
+    padding: 0 3px;
+}
+
+.path-mod-setask .gradingtable .yui3-menu li {
+    list-style-type: none;
+}
+
+.path-mod-setask.jsenabled .gradingtable .yui3-loading {
+    display: none;
+}
+
+.path-mod-setask .gradingtable .yui3-menu .yui3-menu-content {
+    border: 0px;
+    padding-top: 0;
+}
+
+.path-mod-setask div.gradingtable tr .quickgrademodified {
+    background-color: #FFCC99;
+}
+
+.path-mod-setask td.submissioneditable {
+    color: red;
+}
+
+.path-mod-setask .expandsummaryicon {
+    cursor: pointer;
+    display: none;
+}
+
+.path-mod-setask.jsenabled .expandsummaryicon {
+    display: inline;
+}
+
+.path-mod-setask .hidefull {
+    display: none;
+}
+
+.path-mod-setask .quickgradingform form .commentscontainer input,
+.path-mod-setask .quickgradingform form .commentscontainer textarea {
+    display: none;
+}
+
+.path-mod-setask.jsenabled .quickgradingform form .commentscontainer input,
+.path-mod-setask.jsenabled .quickgradingform form .commentscontainer textarea {
+    display: inline;
+}
+
+.path-mod-setask .previousfeedbackwarning {
+    font-size: 140%;
+    font-weight: bold;
+    text-align: center;
+    color: #500;
+}
+
+.path-mod-setask .submissionhistory {
+    background-color: #b0b0b0;
+}
+
+.path-mod-setask .submissionhistory .cell.historytitle {
+    background-color: #808080;
+}
+
+.path-mod-setask .submissionhistory .cell {
+    background-color: #d0d0d0;
+}
+
+.path-mod-setask .submissionhistory .singlebutton {
+    display: inline-block;
+    float: right;
+}
+
+.path-mod-setask.dir-rtl .submissionhistory .singlebutton {
+    float: left;
+}
+
+.path-mod-setask .submissionsummarytable .singlebutton {
+    display: inline-block;
+}
+
+.path-mod-setask.jsenabled .mod-setask-history-link {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+
+.path-mod-setask.jsenabled .mod-setask-history-link h4 {
+    display: inline;
+}
+
+.path-mod-setask.jsenabled .attempthistory h4 {
+    margin-bottom: 7px;
+    text-align: left;
+}
+
+.path-mod-setask.jsenabled.dir_rtl .attempthistory h4 {
+    text-align: right;
+}
+
+.path-mod-setask.dir-rtl.jsenabled .mod-setask-history-link h4 {
+    text-align: right;
+}
+
+.path-mod-setask.jsenabled .mod-setask-history-link-open {
+    padding: 0 5px 0 20px; background: url([[pix:t/expanded]]) 2px center no-repeat;
+}
+
+.path-mod-setask.jsenabled .mod-setask-history-link-closed {
+    padding: 0 5px 0 20px; background: url([[pix:t/collapsed]]) 2px center no-repeat;
+}
+
+.path-mod-setask.dir-rtl.jsenabled .mod-setask-history-link-closed {
+    padding: 0 20px 0 5px; background: url([[pix:t/collapsed_rtl]]) 2px center no-repeat;
+}
+
+.path-mod-setask .submithelp {
+    padding: 1em;
+}
+
+.path-mod-setask .feedbacktitle {
+    font-weight: bold;
+}
+
+.path-mod-setask .submitconfirm,
+.path-mod-setask .submissionlinks,
+.path-mod-setask .submissionaction {
+    text-align: center;
+}
+
+.path-mod-setask .submissionsummarytable .c0,
+.path-mod-setask .mod-setask-history-panel .c0 {
+    width: 150px;
+}
+
+.path-mod-setask .gradingtable .moodle-actionmenu {
+    white-space: nowrap;
+}
+
+.path-mod-setask .gradingtable .moodle-actionmenu[data-enhanced].show .menu a {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.path-mod-setask .gradingtable .menu-action img {
+    display: none;
+}
+
+.path-mod-setask .editsubmissionform input[name="submissionstatement"] {
+    vertical-align: top;
+}
+.path-mod-setask .editsubmissionform label[for="id_submissionstatement"] {
+    display: inline-block;
+}
