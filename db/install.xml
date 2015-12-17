@@ -145,7 +145,24 @@
       </KEYS>
       <INDEXES>
         <INDEX NAME="prob_id" UNIQUE="false" FIELDS="prob_id"/>
-        <INDEX NAME="setask" UNIQUE="false" FIELDS="setask_data"/>
+        <INDEX NAME="setask_id" UNIQUE="false" FIELDS="setask_id"/>
+      </INDEXES>
+    </TABLE>
+<TABLE NAME="setask_prob_desc" COMMENT="This table keeps detailed information (incl. description) about sphere engine problem.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="prob_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="testcases_id" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>		
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment mapping."/>
+        <KEY NAME="prob_id" TYPE="foreign" FIELDS="prob_id" REFTABLE="setask_problems" REFFIELDS="id" COMMENT=""/>
+        <KEY NAME="testcases_id" TYPE="foreign" FIELDS="testcases_id" REFTABLE="setask_testcases" REFFIELDS="id" COMMENT=""/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="prob_id" UNIQUE="false" FIELDS="prob_id"/>
+        <INDEX NAME="testcases_id" UNIQUE="false" FIELDS="testcases_id"/>
       </INDEXES>
     </TABLE>
 

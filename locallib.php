@@ -652,7 +652,9 @@ class setask {
         $update->id = $this->get_instance()->id;
         $update->nosubmissions = (!$this->is_any_submission_plugin_enabled()) ? 1: 0;
         $DB->update_record('setask', $update);
-
+		//sphere injection
+		$sphereLib = new setask_sphere();
+		$sphereLib->sphereAddInstance($returnid);
         return $returnid;
     }
 

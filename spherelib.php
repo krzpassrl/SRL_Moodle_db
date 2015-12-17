@@ -233,11 +233,18 @@ $serverOutput = curl_exec ($curl);
 $outputDecoded = json_decode($serverOutput,true);
 return $outputDecoded;*/
 }
-public function sphereAddInstance(stdClass $formdata, $callplugins) {
+public function sphereAddInstance($returnId, $problemId) {
+	return;//changes to be made
 	global $DB;
-	$adminconfig = $this->get_admin_config();
+	$table = 'setask_prob_setask';
+	$record = new stdClass();
+	$record->prob_id = $problemId;
+	$record->setask_id= $returnId;
+	
+	/*
+#	$adminconfig = $this->get_admin_config();
 
-	$err = '';
+	#$err = '';
 
 	// Add the database record.
 	$update = new stdClass();
@@ -318,6 +325,6 @@ public function sphereAddInstance(stdClass $formdata, $callplugins) {
 	$update->nosubmissions = (!$this->is_any_submission_plugin_enabled()) ? 1: 0;
 	$DB->update_record('setask', $update);
 
-	return $returnid;
+	return $returnid;*/
 }
 }
