@@ -88,7 +88,7 @@ class ApiClient
 	    
 	    // create a complete url
 	    $url = $this->baseUrl . $resourcePath;
-	//var_dump($url);
+	//#var_dump($url);
 	//die();
 	    $curl = curl_init();
 	    // set timeout, if needed
@@ -103,7 +103,7 @@ class ApiClient
 	    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 	
 	    $queryParams['access_token'] = $this->accessToken;
-	    var_dump($this->accessToken);
+	   # #var_dump($this->accessToken);
 	    if (! empty($queryParams)) {
 	        $url = ($url . '?' . http_build_query($queryParams));
 	    }
@@ -124,7 +124,7 @@ class ApiClient
 	        throw new \Exception('Method ' . $method . ' is not recognized.');
 	    }
 	    $url = html_entity_decode($url);
-	    var_dump($url);
+	    #var_dump($url);
 	  //  die();
 	    curl_setopt($curl, CURLOPT_URL, $url);
 	

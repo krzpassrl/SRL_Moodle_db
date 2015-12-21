@@ -46,10 +46,9 @@ class mod_setask_mod_form extends moodleform_mod {
 $sphereLib;
         $mform = $this->_form;
 $sphereLib = new setask_sphere();	
-#$myTest = $sphereLib->sphereGetCompilers();
-#var_dump($myTest);
+#here we get a list of problems from sphere engine 
 $problems = $sphereLib->getProblemsToForm();//sphereGetProblems();
-$sphereLib->getProblemsToForm();//s
+#$sphereLib->getProblemsToForm();//s
 #var_dump($problems);
         $mform->addElement('header', 'general', get_string('general', 'form'));
         $mform->addElement('select', 'problem', 'Problem: ',$problems);

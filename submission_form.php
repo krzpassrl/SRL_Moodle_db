@@ -55,8 +55,26 @@ class mod_setask_submission_form extends moodleform {
 
         $this->add_action_buttons(true, get_string('savechanges', 'setask'));
         if ($data) {
+			//ugly (but working) way of extracting data from text editor
+        	foreach($data as $tes){
+        		$ii =0;
+        	
+        		foreach($tes as $tes2)
+        		{
+        			if($ii == 0)
+        				$textToSend = $tes2;//text from online editor - ugly way but it works...
+        			#	var_dump($textToSend);
+        				$ii++;
+        		}
+        	
+        	}
+        	
+        	//extracting selected compiler 
+        	$selectedItem  =& $mform->getElement('compiler')->getSelected();
+        #	var_dump($selectedItem);
             $this->set_data($data);
         }
+        
     }
 }
 

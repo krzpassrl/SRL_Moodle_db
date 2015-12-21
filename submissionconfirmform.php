@@ -59,6 +59,8 @@ class mod_setask_confirm_submission_form extends moodleform {
         $this->add_action_buttons(true, get_string('continue'));
 
         if ($data) {
+        	$selectedItem  =& $mform->getElement('compiler')->getSelected();
+        	#var_dump($selectedItem);	
             $this->set_data($data);
         }
     }

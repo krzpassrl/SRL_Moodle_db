@@ -3,108 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
 >
-  <TABLES><TABLE NAME="setask_compilers" COMMENT="This table keeps information about about sphere engine compilers.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="short_name" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="ver" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="name" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="ace" TYPE="char" LENGTH="20" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="The last time this setaskment submission was modified by a student."/>
-        <FIELD NAME="geshi" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false"/>
-        <FIELD NAME="compiler_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Sphere engine compiler ID"/>
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment submission."/>
-      </KEYS>
-    </TABLE>
-<TABLE NAME="setask_problems" COMMENT="This table keeps information about about sphere engine problems.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="code" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="name" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="url" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment problem."/>
-      </KEYS>
-    </TABLE>
-    <TABLE NAME="setask_prob_comp" COMMENT="This table keeps information about sphere engine problem-compiler mapping.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="problem_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="compiler_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment mapping."/>
-        <KEY NAME="problem_id" TYPE="foreign" FIELDS="problem_id" REFTABLE="setask_problems" REFFIELDS="id" COMMENT="The problem it maps to."/>
-        <KEY NAME="compiler_id" TYPE="foreign" FIELDS="compiler_id" REFTABLE="setask_compilers" REFFIELDS="id" COMMENT="The compiler it maps to."/>
-      </KEYS>
-      <INDEXES>
-        <INDEX NAME="problem_id" UNIQUE="false" FIELDS="problem_id"/>
-        <INDEX NAME="compiler_id" UNIQUE="false" FIELDS="compiler_id"/>
-      </INDEXES>
-    </TABLE>
-<TABLE NAME="setask_judges" COMMENT="This table keeps information about about sphere engine problems.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="url" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="" SEQUENCE="false"/>
-        <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="true" DEFAULT="" SEQUENCE="false"/>
-        <FIELD NAME="judge_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="name" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment judge."/>
-      </KEYS>
-    </TABLE>
-<TABLE NAME="setask_testcases" COMMENT="This table keeps information about about sphere engine testcases.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="status" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="sgnal" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="time" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="number" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"  />
-        <FIELD NAME="score" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="memory" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"  COMMENT="Consumed memory."/>
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment judge."/>
-      </KEYS>
-    </TABLE>
-<TABLE NAME="setask_runtime_info" COMMENT="This table keeps information about about sphere engine submission runtime info.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="stdout" TYPE="char" LENGTH="1000" NOTNULL="true" DEFAULT="" SEQUENCE="false" COMMENT="stdout data, truncated to 1000 characters; please note that this field should serve debugging purposes only, it shouldn't be used to assess submission correctness (use proper judges and the result.status field for that) "/>
-        <FIELD NAME="psinfo" TYPE="char" LENGTH="200" NOTNULL="true" DEFAULT="" SEQUENCE="false" COMMENT="psinfo data "/>
-        <FIELD NAME="stderr" TYPE="char" LENGTH="1000" NOTNULL="true" DEFAULT="" SEQUENCE="false" COMMENT="stderr data, truncated to 1000 characters "/>
-        <FIELD NAME="cmperr" TYPE="char" LENGTH="200" NOTNULL="true" DEFAULT="" SEQUENCE="false" COMMENT=" cmperr data "/>
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment submission run_time info."/>
-      </KEYS>
-    </TABLE>
-<TABLE NAME="setask_sub_result" COMMENT="This table keeps information about about sphere engine submission result.">
-      <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="status" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="sgnal" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="time" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="runtime_info" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="testcases" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="score" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-        <FIELD NAME="memory" TYPE="int" LENGTH="20" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
-      </FIELDS>
-      <KEYS>
-        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment judge."/>
-        <KEY NAME="runtime_info" TYPE="foreign" FIELDS="runtime_info" REFTABLE="setask_runtime_info" REFFIELDS="id" COMMENT="Submission's runtime info."/>
-        <KEY NAME="testcases" TYPE="foreign" FIELDS="testcases" REFTABLE="setask_testcases" REFFIELDS="id" COMMENT="Submission's testcase info"/>
-      </KEYS>
-    </TABLE>
+  <TABLES>
 <TABLE NAME="setask_sub_data" COMMENT="This table keeps information about about sphere engine submission.">
       <FIELDS>
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="source" TYPE="char" LENGTH="1000" NOTNULL="true" DEFAULT="" SEQUENCE="false"/>
+        <FIELD NAME="source" TYPE="text" LENGTH="200000" NOTNULL="true" DEFAULT="" SEQUENCE="false"/>
         <FIELD NAME="result" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="date" TYPE="char" LENGTH="40" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+        <FIELD NAME="date" TYPE="char" LENGTH="100" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
         <FIELD NAME="problem" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
         <FIELD NAME="sub_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
         <FIELD NAME="compiler" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
@@ -121,7 +26,7 @@
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="user_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
         <FIELD NAME="sub_data" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="token" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="token" TYPE="char" LENGTH="100" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment mapping."/>
@@ -153,7 +58,8 @@
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="prob_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
         <FIELD NAME="testcases_id" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
-        <FIELD NAME="type" TYPE="char" LENGTH="60" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="type" TYPE="char" LENGTH="100" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="desc" TYPE="text" LENGTH="8000" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
       </FIELDS>		
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this setaskment mapping."/>
@@ -288,7 +194,7 @@
         <FIELD NAME="locked" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Student cannot make any changes to their submission if this flag is set."/>
         <FIELD NAME="mailed" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Has the student been sent a notification about this grade update?"/>
         <FIELD NAME="extensionduedate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="An extension date setasked to an individual student."/>
-        <FIELD NAME="workflowstate" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" COMMENT="The current workflow state of the grade"/>
+        <FIELD NAME="workflowstate" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" COMMENT="The current workflow state of the grade"/>
         <FIELD NAME="allocatedmarker" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The allocated marker to this submission"/>
       </FIELDS>
       <KEYS>

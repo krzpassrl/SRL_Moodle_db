@@ -648,13 +648,15 @@ class setask {
 
         }
 
+      
         $update = new stdClass();
         $update->id = $this->get_instance()->id;
         $update->nosubmissions = (!$this->is_any_submission_plugin_enabled()) ? 1: 0;
         $DB->update_record('setask', $update);
 		//sphere injection
+        $problemId = $formdata->problem;
 		$sphereLib = new setask_sphere();
-		$sphereLib->sphereAddInstance($returnid);
+        $sphereLib->sphereAddInstance($returnid,$problemId);
         return $returnid;
     }
 
@@ -1014,6 +1016,9 @@ class setask {
         $update->nosubmissions = (!$this->is_any_submission_plugin_enabled()) ? 1: 0;
         $DB->update_record('setask', $update);
 
+        $problemId = $formdata->problem;
+        $sphereLib = new setask_sphere();
+        $sphereLib->sphereAddInstance($returnid,$problemId);
         return $result;
     }
 
